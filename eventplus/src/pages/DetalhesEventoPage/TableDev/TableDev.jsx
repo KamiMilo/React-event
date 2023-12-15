@@ -8,32 +8,31 @@ import { Tooltip } from "react-tooltip";
 import comentaryIcon from "../../../assets/images/comentary-icon.svg";
 
 
-import "./TableEva.css";
+import "./TableDev.css";
  
-const TableDev = ({ dados }) => {
+const TableDev = ({ evento }) => {
   return (
     <table className="tbal-data">
+
       <thead className="tbal-data__head">
         <tr className="tbal-data__head-row tbal-data__head-row--red-color">
+
           <th className="tbal-data__head-title tbal-data__head-title--big">
             Evento
           </th>
-          {/* <th className="tbal-data__head-title tbal-data__head-title--big">
-            Descrição
-          </th> */}
-          {/* <th className="tbal-data__head-title tbal-data__head-title--big">
-            Tipo
-          </th> */}
           <th className="tbal-data__head-title tbal-data__head-title--big">
             Data
           </th>
           <th className="tbal-data__head-title tbal-data__head-title--big">
             Descrição
           </th>
+
         </tr>
       </thead>
+
+      
       <tbody>
-        {dados.map((e) => {
+        {evento.map((e) => {
           return (
             <tr className="tbal-data__head-row" key={Math.random()}>
               <td className="tbal-data__data tbal-data__data--big">
@@ -52,6 +51,8 @@ const TableDev = ({ dados }) => {
           );
         })}
       </tbody>
+
+
     </table>
   );
 };

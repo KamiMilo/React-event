@@ -10,6 +10,7 @@ import NextEvent from "../../components/NextEvent/NextEvent";
 import PastEvent from "../../components/PastEvent/PastEvent";
 import Container from "../../components/Container/Container";
 import api, { PastEventsResouce } from "../../Services/Service";
+import DetalhesEventoPage from "../DetalhesEventoPage/DetalhesEventoPage";
 
 import { nextEventResource } from "../../Services/Service";
 import Notification from "../../components/Notification/Notification";
@@ -80,7 +81,7 @@ const HomePage = () => {
 
       {/* Eventos anteriores */}
 
-      <section className="proximos-eventos">
+      <section className="Eventos-Anteriores">
         <Container>
           <Title titleText={" Eventos Anteriores"} />
 

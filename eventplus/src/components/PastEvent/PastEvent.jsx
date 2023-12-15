@@ -21,7 +21,7 @@ const PastEvent = ({ title, description, eventDate, idEvent }) => {
         
         data-tooltip-id={idEvent}
         data-tooltip-content={description}
-        data-tooltip-place="top"
+        data-tooltip-place="top"o
       >
         <Tooltip id={idEvent} className="tooltip" />
         {description.substr(0, 15)} ...
@@ -33,7 +33,7 @@ const PastEvent = ({ title, description, eventDate, idEvent }) => {
       </p>
 
       <Link
-      to={`detalhes-evento/${idEvento}`}
+      to={`detalhes-evento/${idEvent}`}
       className="event-card__connect-link" >
         Visualizar     
       </Link>

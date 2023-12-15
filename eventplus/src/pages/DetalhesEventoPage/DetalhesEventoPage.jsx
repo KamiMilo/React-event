@@ -1,60 +1,80 @@
-import React,{useEffect, useParams} from 'react';
+import React,{useEffect, useState} from 'react';
+import { useParams } from 'react-router-dom';
 import './DetalhesEventoPage.css'
 import api, { CommentaryResource, eventsResource } from '../../Services/Service';
 import Title from '../../components/Title/Title';
 import MainContent from '../../components/MainContent/MainContent';
 import Container from '../../components/Container/Container';
-import idEvento from '../../components/PastEvent/PastEvent'
-import Table from '../EventosAlunoPage/TableEva/TableEva';
+import TableDev from '../DetalhesEventoPage/TableDev/TableDev';
 
 
 const DetalhesEventoPage = () => {
 
   
-//   const [evento, setEvento] = [];
+  const [eventos, setEvento] = [];
 
   
-//   useEffect(() => {
-//     getEvento();
-//   },[])
-  
-//   //get para trazer o detalhe do evento
-//   async function getEvento() {
 
-//     try {
-//       const retornaEvento = await api.get(`${eventsResource}/${idEvento}`)
+ const [comentario, setComentario] = useState([])
+  const [nomeEvento,setNomeEvento] =useState('')
+  const [descricao, setDescricao]= useState('')
+//   const {idEvento} = useParams();
+//   const { userData } = useContext(UserContext);
+
+  useEffect(() => {
+    getEvento();
+  },[])
   
-//       setEvento(retornaEvento.data)
-//       console.log(retornaEvento);
+  //get para trazer o detalhe do evento
+  async function getEvento(id) {
+    try {
+      const retornaEvento = await api.get(`${eventsResource}/${id}`)
+        
+      setEvento(retornaEvento.data)
+      console.log(retornaEvento);
       
-//     } catch (error) {
+    } catch (error) {
       
-//       alert('get falhou')
-//     }
-//   }
+        console.log("Deu erro no get")
+    }
+  }
 
-//   //get para trazer comentario do evento
+  //get para trazer comentario do evento
 
-//   async function getComentario() {
-//     const retornaComentario = await api.get(`${CommentaryResource}/${idEvento}`)
-    
-//     setEvento(retornaComentario.data)
-//     console.log(retornaComentario);
-//   }
+  async function getComentario(idEvento) {
+
+    if (userData.role === "administrador") {
+
+        try {
+            const retornaComentario = await api.get(`${CommentaryResource}/${idEvento}`)
+            
+            setEvento(retornaComentario.data)
+            console.log(retornaComentario);
+            
+        } catch (error) {
+            
+        }
+        
+    } else {
+         const retornaComentarioIa = await api.get(`${CommentaryResource}/${idEvento}`)
+        
+    }
+  
+  }
   
 
-//     return(
-//         <>
-//         <MainContent>
-//         <Container>
-//         <Title titleText={"Detalhes do Evento"} potatoClass="custom-title"/>  
-//         <Table
-//         evento={evento}
-//         />
-//         </Container>
-//       </MainContent>   
-//         </>
-//     )        
+    return(
+        <>
+        <MainContent>
+        <Container>
+        <Title titleText={"Detalhes do Evento"} potatoClass="custom-title"/> 
+        {/* <TableDev
+        evento={eventos}
+        />  */}
+        </Container>
+      </MainContent>   
+        </>
+    )        
         
  }
 

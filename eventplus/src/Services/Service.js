@@ -27,6 +27,9 @@ export const presenceEvents = '/PresencasEvento';
 
 export const CommentaryResource = '/ComentariosEvento';
 
+export const CommentaryResourceIa = '/ComentariosEvento/ListarSomenteExibe';
+
+
 export const CommentaryBuscarpoIdResource = '/ComentariosEvento/BuscarPorIdUsuario';
 
 

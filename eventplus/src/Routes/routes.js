@@ -18,7 +18,6 @@ import EventosAlunoPage from "../pages/EventosAlunoPage/EventosAlunoPage";
 import DetalhesEventoPage from "../pages/DetalhesEventoPage/DetalhesEventoPage";
 
 
-
 // Componente Rota 
 //pginás publicas
 const Rotas = () => {

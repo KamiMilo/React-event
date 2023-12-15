@@ -8,6 +8,7 @@ import { UserContext } from '../../Context/AuthContext';
 import { Link } from 'react-router-dom'; 
 
 const Nav = ({ exibeNavbar, setExibeNavbar }) => {
+  
     const { userData } = useContext(UserContext);
   
     return (
@@ -41,10 +42,7 @@ const Nav = ({ exibeNavbar, setExibeNavbar }) => {
               </Link>
               <Link to="/eventos" className="navbar__item">
                 Eventos
-              </Link>
-               <Link to="/detalhes-evento" className="navbar__item">
-                detalhesEvento
-              </Link>  
+              </Link> 
             </>
           ) : userData.nome && userData.role === "comum" ? (
             <>
