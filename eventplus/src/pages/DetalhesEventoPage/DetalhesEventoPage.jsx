@@ -11,50 +11,50 @@ import Table from '../EventosAlunoPage/TableEva/TableEva';
 const DetalhesEventoPage = () => {
 
   
-  const [evento, setEvento] = [];
+//   const [evento, setEvento] = [];
 
   
-  useEffect(() => {
-    getEvento();
-  },[])
+//   useEffect(() => {
+//     getEvento();
+//   },[])
   
-  //get para trazer o detalhe do evento
-  async function getEvento() {
+//   //get para trazer o detalhe do evento
+//   async function getEvento() {
 
-    try {
-      const retornaEvento = await api.get(`${eventsResource}/${idEvento}`)
+//     try {
+//       const retornaEvento = await api.get(`${eventsResource}/${idEvento}`)
   
-      setEvento(retornaEvento.data)
-      console.log(retornaEvento);
+//       setEvento(retornaEvento.data)
+//       console.log(retornaEvento);
       
-    } catch (error) {
+//     } catch (error) {
       
-      alert('get falhou')
-    }
-  }
+//       alert('get falhou')
+//     }
+//   }
 
-  //get para trazer comentario do evento
+//   //get para trazer comentario do evento
 
-  async function getComentario() {
-    const retornaComentario = await api.get(`${CommentaryResource}/${idEvento}`)
+//   async function getComentario() {
+//     const retornaComentario = await api.get(`${CommentaryResource}/${idEvento}`)
     
-    setEvento(retornaComentario.data)
-    console.log(retornaComentario);
-  }
+//     setEvento(retornaComentario.data)
+//     console.log(retornaComentario);
+//   }
   
 
-    return(
-        <>
-        <MainContent>
-        <Container>
-        <Title titleText={"Detalhes do Evento"} potatoClass="custom-title"/>  
-        <Table
-        evento={evento}
-        />
-        </Container>
-      </MainContent>   
-        </>
-    )        
+//     return(
+//         <>
+//         <MainContent>
+//         <Container>
+//         <Title titleText={"Detalhes do Evento"} potatoClass="custom-title"/>  
+//         <Table
+//         evento={evento}
+//         />
+//         </Container>
+//       </MainContent>   
+//         </>
+//     )        
         
  }
 
